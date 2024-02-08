@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GridSquare : MonoBehaviour
+public class GridSquare : Selectable
 {
+    public GameObject numberText;
+    private int number = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,25 @@ public class GridSquare : MonoBehaviour
     {
         
     }
+
+    //Display text, or empty string if number is 0
+    public void DisplayText() {
+        if (number <= 0)
+        {
+            numberText.GetComponent<TMPro.TextMeshProUGUI>().text = " ";
+
+        }
+        else
+        {
+            numberText.GetComponent<TMPro.TextMeshProUGUI>().text = number.ToString();
+        }
+    }
+
+    //Set Number to be inputted one and display it
+    public void SetNumber(int number)
+    {
+        number = number;
+        DisplayText();
+    }
+
 }
