@@ -23,12 +23,12 @@ public class GridSquare : Selectable
     public void DisplayText() {
         if (number <= 0)
         {
-            numberText.GetComponent<TMPro.TextMeshProUGUI>().text = " ";
+            numberText.GetComponent<Text>().text = " ";
 
         }
         else
         {
-            numberText.GetComponent<TMPro.TextMeshProUGUI>().text = number.ToString();
+            numberText.GetComponent<Text>().text = number.ToString();
         }
     }
 
